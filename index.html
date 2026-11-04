@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía visual para repasar las pre-vanguardias, las vanguardias históricas, las neo-vanguardias, el arte contemporáneo y los estereotipos.">
+  <title>Arte en movimiento | Guía para el examen</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+    :root {
+      --paper: #f3efe6;
+      --ink: #20201d;
+      --muted: #68675f;
+      --red: #e3492f;
+      --blue: #334fbe;
+      --yellow: #edbf3b;
+      --green: #497b5b;
+      --line: rgba(32, 32, 29, .17);
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+      --serif: 'Playfair Display', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+    a { color: inherit; }
+    button { font: inherit; }
+    .topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; min-height: 64px; padding: 0 5.5vw; background: rgba(243,239,230,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font-size: .8rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+    .brand-mark { display: grid; place-items: center; width: 27px; height: 27px; background: var(--red); color: white; font-family: var(--serif); font-size: 1.1rem; transform: rotate(-7deg); }
+    .top-links { display: flex; gap: 24px; align-items: center; }
+    .top-links a { text-decoration: none; font-size: .78rem; color: var(--muted); }
+    .top-links a:hover { color: var(--red); }
+    .hero { position: relative; min-height: 565px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; padding: 74px 9vw 80px; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .eyebrow, .section-kicker { font: 500 .72rem var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--red); }
+    .eyebrow::before { content: ''; width: 26px; height: 2px; background: currentColor; }
+    h1 { max-width: 690px; margin: 19px 0 20px; font: 700 clamp(3.7rem, 7vw, 6.8rem)/.96 var(--serif); letter-spacing: -.065em; }
+    h1 em { color: var(--red); font-weight: 600; }
+    .hero-copy { max-width: 490px; color: var(--muted); font-size: 1.03rem; line-height: 1.75; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 29px; }
+    .button { display: inline-flex; align-items: center; gap: 11px; padding: 12px 17px; border: 1px solid var(--ink); text-decoration: none; font-size: .8rem; font-weight: 600; transition: .2s; }
+    .button.primary { color: white; background: var(--ink); }
+    .button:hover { transform: translateY(-2px); box-shadow: 3px 4px 0 var(--yellow); }
+    .artboard { position: relative; justify-self: center; width: min(400px, 100%); aspect-ratio: 1; }
+    .artboard .paper-shape { position: absolute; inset: 9% 7% 7% 13%; background: #e5dbcb; transform: rotate(4deg); box-shadow: 0 18px 45px rgba(32,32,29,.1); }
+    .shape { position: absolute; }
+    .shape.circle { width: 44%; aspect-ratio: 1; left: 16%; top: 21%; border-radius: 50%; background: var(--red); }
+    .shape.blue { width: 47%; height: 56%; right: 9%; top: 16%; background: var(--blue); clip-path: polygon(0 0,100% 17%,82% 100%,18% 76%); transform: rotate(13deg); }
+    .shape.yellow { width: 55%; height: 17%; left: 19%; top: 53%; background: var(--yellow); transform: rotate(-24deg); }
+    .shape.black { width: 8%; height: 63%; left: 54%; top: 18%; background: var(--ink); transform: rotate(28deg); }
+    .shape.green { width: 28%; aspect-ratio: 1; right: 8%; bottom: 8%; background: var(--green); border-radius: 50% 0 50% 50%; transform: rotate(-24deg); }
+    .art-label { position: absolute; right: -2%; bottom: 5%; padding: 9px 12px; background: var(--paper); font: .65rem var(--mono); text-transform: uppercase; transform: rotate(-4deg); }
+    .hero-note { position: absolute; bottom: 24px; left: 9vw; color: var(--muted); font: .66rem var(--mono); }
+    .layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); max-width: 1260px; margin: 0 auto; padding: 0 38px; }
+    .sidebar { position: sticky; top: 64px; align-self: start; padding: 53px 25px 30px 0; }
+    .sidebar-label { margin-bottom: 16px; color: var(--muted); font: .65rem var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .sidebar a { display: block; padding: 9px 0; color: var(--muted); text-decoration: none; font-size: .78rem; border-bottom: 1px solid var(--line); }
+    .sidebar a:hover { color: var(--red); }
+    main { min-width: 0; }
+    section.content-section { padding: 68px 0; border-bottom: 1px solid var(--line); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 30px; }
+    .section-kicker { margin-bottom: 9px; color: var(--red); }
+    h2 { margin: 0; font: 700 clamp(2.1rem, 4vw, 3.15rem)/1.04 var(--serif); letter-spacing: -.045em; }
+    .section-intro { max-width: 500px; margin: 15px 0 0; color: var(--muted); font-size: .91rem; line-height: 1.7; }
+    .timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 37px; }
+    .timeline::before { position: absolute; top: 9px; left: 5px; right: 5px; height: 1px; content: ''; background: var(--ink); }
+    .time-card { position: relative; padding: 33px 16px 18px; border: 1px solid var(--line); background: rgba(255,255,255,.23); }
+    .time-card::before { position: absolute; top: 3px; left: 15px; width: 13px; height: 13px; border: 2px solid var(--paper); border-radius: 50%; background: var(--red); box-shadow: 0 0 0 1px var(--red); content: ''; }
+    .time-card:nth-child(2)::before { background: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
+    .time-card:nth-child(3)::before { background: var(--yellow); box-shadow: 0 0 0 1px var(--yellow); }
+    .time-card:nth-child(4)::before { background: var(--green); box-shadow: 0 0 0 1px var(--green); }
+    .time-card .date { font: .68rem var(--mono); color: var(--muted); }
+    .time-card h3 { margin: 10px 0 8px; font: 700 1.07rem var(--serif); }
+    .time-card p { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.55; }
+    .note { margin-top: 16px; padding: 13px 15px; border-left: 3px solid var(--yellow); background: rgba(237,191,59,.15); font-size: .78rem; line-height: 1.55; }
+    .movement-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 25px; }
+    .movement { padding: 19px; border: 1px solid var(--line); background: rgba(255,255,255,.24); }
+    .movement-top { display: flex; align-items: start; justify-content: space-between; gap: 10px; }
+    .movement h3 { margin: 0; font: 700 1.16rem var(--serif); }
+    .movement .year { white-space: nowrap; color: var(--red); font: .68rem var(--mono); }
+    .movement p { margin: 10px 0 13px; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+    .examples { padding-top: 11px; border-top: 1px solid var(--line); font-size: .71rem; line-height: 1.5; }
+    .examples strong { color: var(--ink); }
+    .tag { display: inline-block; margin-top: 11px; padding: 4px 8px; background: rgba(51,79,190,.1); color: var(--blue); font: .62rem var(--mono); text-transform: uppercase; }
+    .compare { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: .79rem; line-height: 1.55; }
+    .compare th { padding: 11px 13px; color: white; background: var(--ink); text-align: left; font: 500 .68rem var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    .compare td { padding: 13px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .compare td:first-child { width: 22%; font-weight: 700; }
+    .compare tr:nth-child(even) td { background: rgba(255,255,255,.25); }
+    .stereo-box { display: grid; grid-template-columns: .9fr 1.1fr; gap: 25px; margin-top: 25px; padding: 25px; color: white; background: var(--blue); }
+    .stereo-box h3 { margin: 0; font: 700 1.6rem var(--serif); }
+    .stereo-box p { margin: 10px 0 0; font-size: .82rem; line-height: 1.65; color: rgba(255,255,255,.82); }
+    .stereo-box .highlight { color: var(--yellow); }
+    .stereo-box ul { margin: 0; padding-left: 18px; font-size: .8rem; line-height: 1.8; }
+    .analysis-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 19px; counter-reset: steps; }
+    .step { padding: 15px; border-top: 2px solid var(--red); background: rgba(255,255,255,.27); counter-increment: steps; }
+    .step::before { content: '0' counter(steps); display: block; margin-bottom: 12px; color: var(--red); font: .68rem var(--mono); }
+    .step strong { display: block; margin-bottom: 6px; font-size: .8rem; }
+    .step span { display: block; color: var(--muted); font-size: .74rem; line-height: 1.5; }
+    .quiz { margin-top: 25px; padding: 22px; border: 1px solid var(--ink); }
+    .quiz h3 { margin: 0 0 13px; font: 700 1.25rem var(--serif); }
+    .question { padding: 12px 0; border-top: 1px solid var(--line); }
+    .question p { margin: 0 0 9px; font-size: .8rem; font-weight: 600; }
+    .quiz-options { display: flex; gap: 8px; flex-wrap: wrap; }
+    .quiz-options button { padding: 7px 10px; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: .72rem; }
+    .quiz-options button:hover, .quiz-options button.selected { border-color: var(--blue); background: rgba(51,79,190,.1); }
+    .quiz-result { min-height: 20px; margin: 10px 0 0; font-size: .76rem; font-weight: 600; }
+    .quiz-submit { margin-top: 10px; padding: 10px 14px; border: 0; color: white; background: var(--red); cursor: pointer; font-size: .75rem; font-weight: 600; }
+    footer { display: flex; justify-content: space-between; gap: 15px; padding: 25px 5.5vw; color: var(--muted); font: .66rem var(--mono); }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr .7fr; padding-left: 6vw; padding-right: 6vw; }
+      .hero-note { left: 6vw; }
+      .layout { grid-template-columns: 1fr; padding: 0 6vw; }
+      .sidebar { position: static; display: flex; gap: 16px; overflow-x: auto; padding: 15px 0; border-bottom: 1px solid var(--line); }
+      .sidebar-label { display: none; }
+      .sidebar a { flex: 0 0 auto; border: 0; }
+      section.content-section { padding: 48px 0; }
+    }
+    @media (max-width: 620px) {
+      .topbar { min-height: 56px; padding: 0 5vw; }
+      .top-links { gap: 12px; }
+      .top-links a { font-size: .68rem; }
+      .top-links a:first-child { display: none; }
+      .hero { display: block; min-height: auto; padding: 64px 7vw 72px; }
+      h1 { font-size: clamp(3.5rem, 17vw, 5.4rem); }
+      .artboard { width: min(280px, 80vw); margin: 30px auto 0; }
+      .hero-note { left: 7vw; bottom: 18px; }
+      .layout { padding: 0 7vw; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .timeline::before { display: none; }
+      .movement-grid { grid-template-columns: 1fr; }
+      .section-heading { display: block; }
+      .stereo-box { grid-template-columns: 1fr; padding: 20px; }
+      .analysis-steps { grid-template-columns: 1fr 1fr; }
+      .compare { font-size: .7rem; }
+      .compare th, .compare td { padding: 9px 7px; }
+      .compare td:first-child { width: 20%; }
+      footer { padding: 20px 7vw; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span class="brand-mark">A</span> Apuntes visuales</a>
+    <nav class="top-links" aria-label="Navegación principal">
+      <a href="#recorrido">Recorrido</a>
+      <a href="#estereotipos">Estereotipos</a>
+      <a href="#repaso">Autoevaluación ↗</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div>
+      <div class="eyebrow">Guía de estudio · 6.º de secundaria</div>
+      <h1>El arte<br>siempre está<br><em>en movimiento.</em></h1>
+      <p class="hero-copy">Un recorrido claro por las ideas que rompieron las reglas, las que las reinventaron y las imágenes que construyen —o cuestionan— estereotipos.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#recorrido">Empezar el recorrido <span>↓</span></a>
+        <a class="button" href="#repaso">Probar lo que sé <span>↗</span></a>
+      </div>
+    </div>
+    <div class="artboard" role="img" aria-label="Composición geométrica abstracta inspirada en las vanguardias">
+      <div class="paper-shape"></div><div class="shape circle"></div><div class="shape blue"></div><div class="shape yellow"></div><div class="shape black"></div><div class="shape green"></div>
+      <div class="art-label">romper · probar · mirar</div>
+    </div>
+    <div class="hero-note">UNA GUÍA PARA MIRAR CON OJOS PROPIOS — 01 / 05</div>
+  </section>
+
+  <div class="layout">
+    <nav class="sidebar" aria-label="Índice de temas">
+      <div class="sidebar-label">En esta guía</div>
+      <a href="#recorrido">01 · Recorrido</a><a href="#pre">02 · Pre-vanguardias</a><a href="#historicas">03 · Vanguardias</a><a href="#neo">04 · Neo-vanguardias</a><a href="#contemporaneo">05 · Hoy</a><a href="#estereotipos">06 · Estereotipos</a><a href="#repaso">07 · Repaso</a>
+    </nav>
+    <main>
+      <section class="content-section" id="recorrido">
+        <div class="section-heading"><div><div class="section-kicker">01 — Mapa general</div><h2>Cuatro momentos,<br>muchas rupturas.</h2><p class="section-intro">No son cajones cerrados: las fechas se superponen y las ideas viajan de un movimiento a otro. Este mapa sirve para orientarte.</p></div></div>
+        <div class="timeline">
+          <article class="time-card"><div class="date">c. 1860–1905</div><h3>Pre-vanguardias</h3><p>Se cuestiona la representación académica. Crece el interés por la percepción, el color y la subjetividad.</p></article>
+          <article class="time-card"><div class="date">c. 1905–1940</div><h3>Vanguardias históricas</h3><p>Movimientos de ruptura que buscan lenguajes nuevos para un mundo acelerado y cambiante.</p></article>
+          <article class="time-card"><div class="date">c. 1945–1970</div><h3>Neo-vanguardias</h3><p>Se retoman y transforman las rupturas: la obra puede ser acción, idea o experiencia.</p></article>
+          <article class="time-card"><div class="date">c. 1970–hoy</div><h3>Arte contemporáneo</h3><p>Pluralidad de medios, voces y temas; no existe un único estilo que defina la época.</p></article>
+        </div>
+        <div class="note"><strong>Clave:</strong> “posvanguardia” no tiene una fecha única ni significa que ya no haya innovación. Suele nombrar el escenario plural posterior a las vanguardias; su uso depende del programa y del autor.</div>
+      </section>
+
+      <section class="content-section" id="pre">
+        <div class="section-heading"><div><div class="section-kicker">02 — Antes de la ruptura</div><h2>Pre-vanguardias</h2><p class="section-intro">Durante el siglo XIX, varios artistas se alejaron de las normas de las academias y prepararon el terreno para las vanguardias.</p></div></div>
+        <div class="movement-grid">
+          <article class="movement"><div class="movement-top"><h3>Impresionismo</h3><span class="year">c. 1870–1880</span></div><p>Busca captar la impresión de un instante: luz cambiante, color y pincelada visible. A menudo pinta al aire libre y escenas de la vida moderna.</p><div class="examples"><strong>Referentes:</strong> Claude Monet, Edgar Degas, Berthe Morisot.</div><span class="tag">percepción · luz</span></article>
+          <article class="movement"><div class="movement-top"><h3>Postimpresionismo</h3><span class="year">c. 1880–1905</span></div><p>No es un grupo uniforme. Algunos artistas intensifican el color o la expresión; otros organizan las formas con más estructura.</p><div class="examples"><strong>Referentes:</strong> Vincent van Gogh, Paul Cézanne, Paul Gauguin.</div><span class="tag">color · expresión · estructura</span></article>
+          <article class="movement"><div class="movement-top"><h3>Simbolismo</h3><span class="year">c. 1880–1900</span></div><p>Prefiere sugerir ideas, emociones y mundos imaginarios en vez de describir fielmente lo visible.</p><div class="examples"><strong>Referentes:</strong> Gustave Moreau, Odilon Redon; también hay expresiones literarias.</div><span class="tag">símbolo · imaginación</span></article>
+          <article class="movement"><div class="movement-top"><h3>Art Nouveau</h3><span class="year">c. 1890–1910</span></div><p>Integra artes aplicadas y diseño. Se reconoce por líneas curvas y motivos inspirados en plantas, presentes en arquitectura, gráfica y objetos.</p><div class="examples"><strong>Referentes:</strong> Alphonse Mucha, Hector Guimard.</div><span class="tag">diseño · línea orgánica</span></article>
+        </div>
+        <div class="note"><strong>¿Por qué importan?</strong> Abrieron caminos: la pintura podía expresar una mirada personal y no tenía que imitar la realidad de forma académica.</div>
+      </section>
+
+      <section class="content-section" id="historicas">
+        <div class="section-heading"><div><div class="section-kicker">03 — Primera mitad del siglo XX</div><h2>Vanguardias históricas</h2><p class="section-intro">“Vanguardia” alude a ir adelante. Sus grupos experimentaron con la forma y cuestionaron qué podía ser el arte. No todas compartían la misma visión.</p></div></div>
+        <div class="movement-grid">
+          <article class="movement"><div class="movement-top"><h3>Expresionismo</h3><span class="year">desde 1905</span></div><p>Deforma y exagera para comunicar emociones, tensiones o una visión crítica de la sociedad. El color puede ser intenso y no naturalista.</p><div class="examples"><strong>Grupos y artistas:</strong> Die Brücke, Ernst Ludwig Kirchner; Der Blaue Reiter, Wassily Kandinsky.</div><span class="tag">emoción · subjetividad</span></article>
+          <article class="movement"><div class="movement-top"><h3>Cubismo</h3><span class="year">desde 1907</span></div><p>Fragmenta objetos en planos y geometrías, mostrando varios puntos de vista en una misma imagen.</p><div class="examples"><strong>Referentes:</strong> Pablo Picasso, Georges Braque, Juan Gris.</div><span class="tag">fragmentación · perspectiva</span></article>
+          <article class="movement"><div class="movement-top"><h3>Futurismo</h3><span class="year">desde 1909</span></div><p>Exalta la velocidad, las máquinas y el movimiento de la vida moderna. Su entusiasmo por la guerra es una dimensión problemática del movimiento.</p><div class="examples"><strong>Referentes:</strong> Umberto Boccioni, Giacomo Balla.</div><span class="tag">velocidad · modernidad</span></article>
+          <article class="movement"><div class="movement-top"><h3>Dadaísmo</h3><span class="year">desde 1916</span></div><p>Ante la devastación de la Primera Guerra Mundial, desafía la lógica y las instituciones artísticas mediante el absurdo, el azar y la provocación.</p><div class="examples"><strong>Referentes:</strong> Hannah Höch, Marcel Duchamp, Tristan Tzara.</div><span class="tag">azar · antiarte · crítica</span></article>
+          <article class="movement"><div class="movement-top"><h3>Surrealismo</h3><span class="year">desde 1924</span></div><p>Explora sueños, asociaciones inesperadas e imágenes del inconsciente. Combina elementos reconocibles de maneras extrañas.</p><div class="examples"><strong>Referentes:</strong> Remedios Varo, Salvador Dalí, René Magritte.</div><span class="tag">sueño · inconsciente</span></article>
+          <article class="movement"><div class="movement-top"><h3>Constructivismo y De Stijl</h3><span class="year">desde 1915 / 1917</span></div><p>Investigan el orden geométrico y la abstracción. El constructivismo se vincula también con proyectos sociales; De Stijl busca equilibrio con formas y colores básicos.</p><div class="examples"><strong>Referentes:</strong> Aleksandr Ródchenko, Piet Mondrian, Theo van Doesburg.</div><span class="tag">geometría · abstracción</span></article>
+        </div>
+      </section>
+
+      <section class="content-section" id="neo">
+        <div class="section-heading"><div><div class="section-kicker">04 — Después de 1945</div><h2>Neo-vanguardias</h2><p class="section-intro">Retoman la experimentación de las vanguardias históricas, pero en un contexto distinto: posguerra, medios masivos y nuevas formas de circulación del arte.</p></div></div>
+        <div class="movement-grid">
+          <article class="movement"><div class="movement-top"><h3>Pop art</h3><span class="year">décadas de 1950–60</span></div><p>Trabaja con imágenes de la publicidad, el cómic y los productos de consumo. Puede celebrarlos, repetirlos o cuestionar la cultura de masas.</p><div class="examples"><strong>Referentes:</strong> Andy Warhol, Roy Lichtenstein; en Argentina, Marta Minujín.</div><span class="tag">consumo · medios</span></article>
+          <article class="movement"><div class="movement-top"><h3>Happening y Fluxus</h3><span class="year">décadas de 1950–60</span></div><p>El arte puede ocurrir como acción, evento o juego. Se borran límites entre disciplinas y se invita a participar.</p><div class="examples"><strong>Referentes:</strong> Allan Kaprow, Yoko Ono, Nam June Paik.</div><span class="tag">acción · participación</span></article>
+          <article class="movement"><div class="movement-top"><h3>Minimalismo</h3><span class="year">décadas de 1960–70</span></div><p>Reduce las formas a estructuras simples y materiales industriales. La relación de la obra con el espacio y con quien la mira cobra importancia.</p><div class="examples"><strong>Referentes:</strong> Donald Judd, Dan Flavin, Sol LeWitt.</div><span class="tag">reducción · espacio</span></article>
+          <article class="movement"><div class="movement-top"><h3>Arte conceptual</h3><span class="year">desde la década de 1960</span></div><p>La idea o instrucción puede ser más importante que el objeto final. Pregunta qué condiciones hacen que algo sea considerado arte.</p><div class="examples"><strong>Referentes:</strong> Joseph Kosuth, Lucy Lippard; en Argentina, el grupo de Tucumán Arde.</div><span class="tag">idea · contexto</span></article>
+          <article class="movement"><div class="movement-top"><h3>Performance y Land art</h3><span class="year">desde la década de 1960</span></div><p>La performance usa el cuerpo, el tiempo y la acción. El Land art interviene el paisaje y muchas veces deja obras efímeras o documentadas.</p><div class="examples"><strong>Referentes:</strong> Ana Mendieta, Marina Abramović, Robert Smithson.</div><span class="tag">cuerpo · paisaje</span></article>
+        </div>
+        <div class="note"><strong>Para distinguirlas:</strong> no solo cambian el aspecto de la obra; también amplían sus materiales, sus espacios y la participación del público.</div>
+      </section>
+
+      <section class="content-section" id="contemporaneo">
+        <div class="section-heading"><div><div class="section-kicker">05 — Desde fines del siglo XX hasta hoy</div><h2>Arte contemporáneo<br>o posvanguardia</h2><p class="section-intro">Es un panorama diverso, global y en permanente discusión. No hay una sola técnica ni una definición que reúna todas las obras.</p></div></div>
+        <table class="compare">
+          <thead><tr><th>Aspecto</th><th>¿Qué puede aparecer?</th><th>Pregunta para mirar</th></tr></thead>
+          <tbody>
+            <tr><td>Medios</td><td>Instalación, fotografía, video, arte digital, pintura, objetos, performance.</td><td>¿Por qué se eligió este medio?</td></tr>
+            <tr><td>Temas</td><td>Identidad, memoria, género, migraciones, ambiente, tecnología y poder.</td><td>¿Qué debate o experiencia pone en juego?</td></tr>
+            <tr><td>Contexto</td><td>Espacios públicos, museos, redes, comunidades y situaciones cotidianas.</td><td>¿Cómo influye el lugar o el público?</td></tr>
+            <tr><td>Sentido</td><td>Puede ser abierto, múltiple y discutido; no siempre busca belleza o permanencia.</td><td>¿Qué interpretaciones permite y cuáles deja afuera?</td></tr>
+          </tbody>
+        </table>
+        <div class="note"><strong>Atención:</strong> “contemporáneo” suele referirse al arte de nuestro tiempo; “posvanguardia” es una etiqueta histórica o teórica usada de distintas maneras. No son sinónimos exactos en todos los programas.</div>
+      </section>
+
+      <section class="content-section" id="estereotipos">
+        <div class="section-heading"><div><div class="section-kicker">06 — Mirada crítica</div><h2>Estereotipos:<br>imágenes que simplifican.</h2><p class="section-intro">Las imágenes no solo muestran el mundo: también pueden influir en cómo pensamos a las personas y los grupos.</p></div></div>
+        <div class="stereo-box">
+          <div><h3>¿Qué es un estereotipo?</h3><p>Es una idea <span class="highlight">simplificada y generalizada</span> sobre un grupo social, que atribuye características a sus integrantes como si todas las personas fueran iguales. Puede parecer “positiva” y aun así limitar.</p></div>
+          <ul>
+            <li><strong>En imágenes:</strong> se repiten rasgos, roles o apariencias asociados a un grupo.</li>
+            <li><strong>En la sociedad:</strong> pueden sostener prejuicios, desigualdades y exclusiones.</li>
+            <li><strong>En el arte:</strong> pueden reproducirse, cuestionarse, subvertirse o hacerse visibles para debatirlos.</li>
+            <li><strong>Importante:</strong> una representación no define por sí sola a toda una comunidad; considera quién la creó y desde qué contexto.</li>
+          </ul>
+        </div>
+        <h3 style="margin:27px 0 0;font:700 1.25rem var(--serif)">Analizá una imagen en cuatro pasos</h3>
+        <div class="analysis-steps">
+          <div class="step"><strong>Describí</strong><span>¿Qué personas, objetos, gestos, colores y espacios ves? Separá observación de opinión.</span></div>
+          <div class="step"><strong>Preguntá quién</strong><span>¿Quién produjo la imagen? ¿Para quién? ¿En qué época y medio circula?</span></div>
+          <div class="step"><strong>Detectá el mensaje</strong><span>¿Qué roles o características se repiten? ¿A quién representa y a quién deja afuera?</span></div>
+          <div class="step"><strong>Interpretá</strong><span>¿Refuerza una idea o la pone en cuestión? Justificá tu lectura con detalles visuales.</span></div>
+        </div>
+      </section>
+
+      <section class="content-section" id="repaso">
+        <div class="section-heading"><div><div class="section-kicker">07 — Antes del examen</div><h2>Repasá y comprobá.</h2><p class="section-intro">Elegí una respuesta por pregunta y revisá qué conceptos ya tenés claros.</p></div></div>
+        <div class="quiz" id="quiz">
+          <h3>Mini autoevaluación</h3>
+          <div class="question" data-answer="b"><p>1. ¿Qué movimiento presenta varios puntos de vista mediante planos fragmentados?</p><div class="quiz-options"><button data-choice="a">Impresionismo</button><button data-choice="b">Cubismo</button><button data-choice="c">Surrealismo</button></div></div>
+          <div class="question" data-answer="c"><p>2. ¿Qué caracteriza especialmente al arte conceptual?</p><div class="quiz-options"><button data-choice="a">Imitar la naturaleza</button><button data-choice="b">Usar solo colores primarios</button><button data-choice="c">Dar prioridad a la idea</button></div></div>
+          <div class="question" data-answer="a"><p>3. Un estereotipo es…</p><div class="quiz-options"><button data-choice="a">Una generalización que simplifica a un grupo</button><button data-choice="b">Una técnica exclusiva de pintura</button><button data-choice="c">Una opinión individual sin efecto social</button></div></div>
+          <button class="quiz-submit" id="check-quiz">Corregir respuestas</button>
+          <p class="quiz-result" id="quiz-result" aria-live="polite"></p>
+        </div>
+        <div class="note"><strong>Consejo de examen:</strong> para cada movimiento, recordá <em>época + idea central + un ejemplo</em>. Si analizás una obra, describí primero lo que ves y después explicá tu interpretación con evidencias.</div>
+      </section>
+    </main>
+  </div>
+  <footer><span>Apuntes visuales · Historia del arte</span><span>Aprender a mirar también es aprender a preguntar.</span></footer>
+  <script>
+    document.querySelectorAll('.question').forEach((question) => {
+      question.querySelectorAll('button[data-choice]').forEach((button) => {
+        button.addEventListener('click', () => {
+          question.querySelectorAll('button[data-choice]').forEach((option) => option.classList.remove('selected'));
+          button.classList.add('selected');
+          question.dataset.selected = button.dataset.choice;
+        });
+      });
+    });
+
+    document.querySelector('#check-quiz').addEventListener('click', () => {
+      const questions = [...document.querySelectorAll('.question')];
+      const answered = questions.filter((question) => question.dataset.selected);
+      const correct = answered.filter((question) => question.dataset.selected === question.dataset.answer).length;
+      const result = document.querySelector('#quiz-result');
+      if (answered.length < questions.length) {
+        result.textContent = `Respondé las ${questions.length} preguntas para corregir. Llevás ${answered.length} de ${questions.length}.`;
+        result.style.color = 'var(--red)';
+        return;
+      }
+      result.textContent = `Resultado: ${correct} de ${questions.length}. ${correct === questions.length ? '¡Excelente repaso!' : 'Volvé a revisar los temas y probá otra vez.'}`;
+      result.style.color = correct === questions.length ? 'var(--green)' : 'var(--blue)';
+    });
+  </script>
+</body>
+</html>
